@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 
 const Listing = require('./models/Listing');
 
+const password=encodeURIComponent('Kadak21@')
 
 main()
    .then((res)=>{
@@ -29,7 +30,7 @@ main()
    })
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/AirBnb');
+  await mongoose.connect(`mongodb+srv://gwkadak:${password}@cluster0.h93js.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`);
 
 
 }
