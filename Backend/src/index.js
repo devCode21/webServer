@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 const Listing = require('./models/Listing');
 
 const password=encodeURIComponent('Kadak21@')
+const newPass=''
 
 main()
    .then((res)=>{
