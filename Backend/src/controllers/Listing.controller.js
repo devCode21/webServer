@@ -26,40 +26,23 @@ const CreateListings=asyncHandler(async(req,res)=>{
      const{title,description,price, location,country}=req.body;
       console.log(req.body)
      
-   try {
-     //  const title=req.body.title
-     
-     //  const location=req.body.location
-     //  const description=req.body.description
-     //  const price=req.body.price
-     //  const country=req.body.country
- 
+    try{
+
        const Owner=req.user._id
      
-    
-     //  const Img=req.boy.Img
-     console.log(title)
-     console.log(price)
-     console.log(country)
-     console.log(location)
-      
-    //   for(i of [title,description,price, location,country]){
-    //      if(!i || i===undefined || i===''){
-    //        console.log(i)
-    //        throw  new ApiError(404,"no data found")
-    //      }
-    //   }
-     //  console.log(req.Cookies)
+      for(i of [title,description,price, location,country]){
+         if(!i || i===undefined || i===''){
+           console.log(i)
+           throw  new ApiError(404,"no data found")
+         }
+      }
+      console.log(req.Cookies)
       
      
        if(!Owner){
          throw new ApiError(401,'Login is required')
       }
-      
-    //   if(!Img){
-    //       Img='';
-    //   }
-       console.log(req)
+  
       const ImgPath=req.file?.path
       console.log(ImgPath,req.file,req.files)
       if(!ImgPath){
@@ -71,7 +54,6 @@ const CreateListings=asyncHandler(async(req,res)=>{
       }
  
  
-     
      const SaveUser=await Listing.create({
          title,
          description,
@@ -95,8 +77,6 @@ const CreateListings=asyncHandler(async(req,res)=>{
  
    } catch (error) {
 
-    console.log(error)
-
     if(error instanceof ApiError){
         return res.status(error.statusCode).json(
             {
@@ -105,39 +85,29 @@ const CreateListings=asyncHandler(async(req,res)=>{
             }
         )
     }
-
     return res.status(500).json(
         {
             status:'error',
             message:'server error'
         }
-    )
-    
-
-    
+     )
    }
-
 })
 
 
 const AllListing=asyncHandler(async(req,res)=>{
-     
+  
    try {
-     if(req.headers['authorization']?.split(' ')[1]||req.cookies.AccessToken||req.body.Owner){
-            
+     if(req.headers['authorization']?.split(' ')[1]||req.cookies.AccessToken||req.body.Owner){ 
           verifyJwt()
-          
      }
  
-     const AllListing=await Listing.find({})
-     // console.log("user",req.user )
-     return res.status(200).json(
-         new ApiResponse(200,AllListing,'Succes')
- 
+      const AllListing=await Listing.find({})
+      return res.status(200).json(
+      new ApiResponse(200,AllListing,'Succes')
      )
    } catch (error) {
-    console.log(error)
-
+   
     if(error instanceof ApiError){
         return res.status(error.statusCode).json(
             {
@@ -202,7 +172,7 @@ const UpdateListing=asyncHandler(async(req,res)=>{
    try {
     
         const {id}=req.params
-        console.log(req.params)
+       
         if(!id){
             throw new ApiError(404,'no post to update')
         }
@@ -347,7 +317,7 @@ const getLis=asyncHandler(async(req,res)=>{
 const LocationBylist=async(req,res)=>{
      try {
          const {Location}=req.body
-         
+         console.log(req.body)
          console.log(Location)
          const listing=await Listing.find({country:Location})
          console.log(listing)

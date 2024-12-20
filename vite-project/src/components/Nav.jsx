@@ -8,6 +8,35 @@ import axios from 'axios'
 
 export default function Nav() {
  
+
+const [search, setSearch]=useState('')
+
+
+const handleSearch=async()=>{
+      if(search!=""){
+         console.log(search)
+      }
+
+      
+
+    
+}
+
+const[src,setSrc]=useState(false)
+
+useEffect(()=>{
+    if(src===true){
+      const serachdata=async()=>{
+         const data= await axios.post('http://localhost:3000/listings/search',{Location:search})
+        
+         console.log(data)
+  
+      }
+      serachdata()
+     
+    }
+    setSrc(false)
+},[handleSearch])
   
 const[btn, setbtn]=useState(1)
  
@@ -52,8 +81,9 @@ const Owner=(localStorage.getItem("AccessToken"))
            Home
            </div>
         <div className="navLinks" id="search">
-            <input type="text" placeholder='enter the Location' />
-            <FontAwesomeIcon icon={faMagnifyingGlass} size='2x' />
+            <input type="text" placeholder='Enter the Location/Country/Name' value={search} onChange={(e)=>(setSearch(e.target.value))}/>
+
+            <button  style={{border:'none'}} onClick={(e)=>(e.preventDefault(),handleSearch(),setSrc(true))}><FontAwesomeIcon icon={faMagnifyingGlass} size='2x'  /></button>
            
             
         </div>

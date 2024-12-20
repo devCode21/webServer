@@ -40,12 +40,7 @@ const LoginUser=async(req,res)=>{
         if(!LogUser){
             throw new ApiError(404, 'user not found')
         }
-        // const checkPasconst checkPass=
         const oldPass=await LogUser.password
-        
-        // console.log(oldPass,LogUser,password)
-    
-    
         if(oldPass!==password){
             throw new ApiError(401,'wrong Password')
         }

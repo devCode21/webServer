@@ -42,11 +42,14 @@ function Listing() {
                 <p>{ele.title}</p>
                 <p>${ele.price}/night</p>
                 </Link>
+                 {/* <button >View details</button> */}
               </div>
-             
+               
            ))
+           
+
           
-          
+
         }
     </>
 

@@ -9,7 +9,7 @@ import img from '../src/assets/login.svg'
 
 function Signup() {
   
-  //
+
     const [email,setemail]=useState('')
     const [msg,setmsg]=useState(false)
     const navigate=useNavigate()

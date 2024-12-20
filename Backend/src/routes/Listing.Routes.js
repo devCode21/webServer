@@ -10,7 +10,7 @@ router.route('/:id/deleteLis').post(deleteListing)
 router.route('/CreateLis').post(verifyJwt,upload.single("file"),CreateListings)
 router.route('/:id/updateImg').post(verifyJwt,upload.single('img'),updateImg)
 router.route('/:id/lis').get(getLis)
-router.route('/search').get(verifyJwt,LocationBylist)
+router.route('/search').post(LocationBylist)
 router.route('/yourLis').get(verifyJwt,yourListing)
 
 module.exports=router

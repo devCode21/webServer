@@ -15,15 +15,6 @@ function Login() {
     const [showmsg,setmsg]=useState(false)
     const navigate=useNavigate()
 
-    // const CheckPassword=()=>{
-    //     if(confirmPassword!==password){
-    //         console.log("password matched wrong")
-    //         setCheckpass(1)
-    //         return
-    //     }
-    //     setCheckpass(0)
-    // }
-
     const Logindata={
         email,
         password
@@ -88,11 +79,6 @@ function Login() {
        <input type='text' id='password' required={true} onChange={(e)=>(setpassword(e.target.value))}  placeholder='enter you password'/>
   </div>
 
-  {/* <div className="confirmPassword">
-        <label htmlFor="confirmPassword">ConfirmPassword</label>
-       <input type='text' id='confirmPassword' required={true} onChange={(e)=>(setconfirmPassword(e.target.value))}  placeholder='enter confirm password'/>     
-  </div>
-   */}
   <button onClick={(e)=>(e.preventDefault,setClickbtn((prev)=>(prev+1)))}>Login</button>
 
   {checkPass==1?<div>password should be matched </div>:'' }

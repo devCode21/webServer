@@ -6,6 +6,8 @@ import axios from 'axios'
 import { useNavigate } from 'react-router'
 import img1 from '../src/assets/Create.svg'
 
+
+
 function AddListingPage() {
 
 const[title,setTitle]=useState('')
@@ -13,15 +15,15 @@ const[location,setLocation]=useState('')
 const[country,setCountry]=useState('')
 const[price,setPrice]=useState(0)
 const[des,setdes]=useState('')
-
 const[data,setdata]=useState({})
 const[button,setbutton]=useState(false)
-
 const Owner=(localStorage.getItem("AccessToken"))
-
-
 const collection=[title,location,country,price,des]
-
+const [prev,setImgPreview]=useState('')
+const[img,setImg]=useState(null)
+const formData= new FormData()
+const [imgUp,setimgup]=useState(false)
+const Navigate=useNavigate()
 
 const onSubmit=()=>{
  
@@ -34,19 +36,8 @@ const onSubmit=()=>{
        
        
        }
-       setdata(data1)
-       
-      
-      
-
-
-
-
-       
+       setdata(data1)     
 }
-const [prev,setImgPreview]=useState('')
-const[img,setImg]=useState(null)
-const formData= new FormData()
 
 // chat gpt
 Object.keys(data).forEach((key) => {
@@ -66,38 +57,33 @@ const handleImageChange = (e) => {
   }
 };
 // 
-const [imgUp,setimgup]=useState(false)
+
 
 useEffect(()=>{
-  
-     
-     const dataCall=async()=>{
+    
+    const dataCall=async()=>{
      if(button==true){
-      console.log(img)
-      formData.append("file",img)
-      console.log(img)
-      if(data==undefined){
-        return console.log('no data')
-      }
+         console.log(img)
+         formData.append("file",img)
+         console.log(img)
+       if(data==undefined){
+          return console.log('no data')
+        }
      
-      const res=await axios.post('http://localhost:3000/listings/CreateLis',formData,{headers:{
+    const res=await axios.post('http://localhost:3000/listings/CreateLis',formData,{headers:{
         'Authorization':`Bearer ${Owner}`,
         "Content-Type": "multipart/form-data"
       }})
       const newdata=await res.data
       console.log(res.data)
-  
-  
-      }
-    
-    
+     }
      }
      dataCall()
      setbutton(false)
   
 },[button])
 
-const Navigate=useNavigate()
+
 
 
 

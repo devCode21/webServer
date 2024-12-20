@@ -11,7 +11,6 @@ const apiResponse=require('../utils/ApiResponse')
 const createReview=async(req,res)=>{
     const{id}=req.params
     const review=req.body.review
-    console.log(req.params, req.body)
     try {
         console.log(id,review)
         if(!id || !review){
@@ -58,9 +57,6 @@ const createReview=async(req,res)=>{
 const deleteRev=async(req,res)=>{
        try {
          const user=req.user._id
-         //user ka id le raha hu
-         console.log("user",user)
- 
          const rev_id=req.params.rev_id
          console.log(rev_id)
          const revOwners=await Review.findById(rev_id)
@@ -97,9 +93,6 @@ const deleteRev=async(req,res)=>{
 
 const showRev=async(req,res)=>{
    
-    // if(!lis_id){
-    //     throw new ApiError(400,'no lis_id')
-    // }
    try {
      const {id}=req.params
      const Rev=await Review.find({listing:id}).populate('owner')

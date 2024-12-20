@@ -17,7 +17,7 @@ function Footer() {
         {/* <div className='conatact_msg' style={{fontSize:'20px',fontFamily:'monospace'}}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </div> */}
-        <div className='contact_email' style={{fontSize:'30px',fontFamily:'monospace'}}> contact us on &nbsp;<b><u>abc@gmail.com</u></b></div>
+        <div className='contact_email' style={{fontSize:'30px',fontFamily:'monospace'}}>Contact Us On &nbsp;<b><u>abc@gmail.com</u></b></div>
         <div className='social-media '>
              <div className='media'> <i className='bx bxl-facebook-circle' style={{fontSize:'50px',color:'blue'}}></i></div>
              <div className='media'><i className='bx bxl-instagram' style={{fontSize:'50px',color:'blue'}} ></i></div>
@@ -29,6 +29,8 @@ function Footer() {
       <div className="contact_img">
         <h1><b></b></h1>
       </div>
+
+      
       
     </div>
   )
