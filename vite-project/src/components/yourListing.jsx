@@ -23,6 +23,13 @@ function YourLis() {
   },[])
 
 
+  if(data.length==0){
+    return(
+      <>
+       <div className="loader" style={{justifySelf:'center'}}></div>
+      </>
+    )
+  }
 
 
 

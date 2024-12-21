@@ -24,9 +24,15 @@ function Listing() {
      dataCall()
   },[])
 
-  
-
-
+  console.log(data)
+ 
+  if(data.length==0){
+    return(
+      <>
+       <div className="loader"></div>
+      </>
+    )
+  }
 
 
 

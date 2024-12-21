@@ -15,30 +15,23 @@ import Showreview from './components/Showreview'
 function LisDetail() {
 
    const Navigate=useNavigate()
-
-   
    const[Owner,setOwner]=useState('')
    const Owner1=(localStorage.getItem("AccessToken"))
    const user=localStorage.getItem("Name")
-
- 
-  
-
    const {id}=useParams()
    let[list,setLis]=useState({})
-   
    const [res,setres]=useState({})
    
    useEffect(()=>{
       const data=async()=>{
           try {
-  //populatre backend me karna hai fir data bhejna haia 
+            //populatre backend me karna hai fir data bhejna haia 
             const res1=await axios.get(`https://webserver-ant9.onrender.com/listings/${id}/lis`,{headers:{
                'Authorization':`Bearer ${Owner1}`
             }})
           
-             const lisdata=await res1.data.data.getLis
-             setres(lisdata)
+            const lisdata=await res1.data.data.getLis
+            setres(lisdata)
             let ownerData=await res1.data.data.Owner.Owner.name
             console.log(ownerData)
             setOwner(ownerData)
@@ -66,7 +59,14 @@ function LisDetail() {
    },1000)
    }
    console.log(Owner,user)
-
+  
+   if(Object.keys(res).length==0){
+      return(
+        <>
+         <div className="loader" style={{justifySelf:'center'}}></div>
+        </>
+      )
+    }
   return (
     <>
      <Nav/>
