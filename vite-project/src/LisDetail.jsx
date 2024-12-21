@@ -77,7 +77,7 @@ function LisDetail() {
       <div className="lisdetail">
          
          <h1>{res.title}</h1>
-         <p style={{color:'green'}}> {<b style={{color:'black'}}> Description</b>}  {<br/>} {res.description ||'good place to visit'} </p>
+         <p style={{fontFamily:'monospace'}}> {<b style={{color:'black',marginBottom:'2rem'}}> Description</b>} {<br/>} {<br/>} {res.description ||'good place to visit'} </p>
          <h2><b><span>Price </span>{}= {} {}{res.price }</b></h2>
          <div style={{display:'flex', fontSize:'1rem',justifyContent:'space-between'}}>
          <h2 > <span>Location/State </span>: {res.location}</h2>
@@ -86,7 +86,7 @@ function LisDetail() {
          <div className='btn'>
        {
          Owner==user? <><button ><Link to={`/${id}/updateLis`}>Update</Link></button>
-         <button onClick={del }>delete</button>
+         <button onClick={del }>Delete</button>
  </>: ' '
        }
 

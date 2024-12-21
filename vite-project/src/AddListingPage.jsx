@@ -90,6 +90,34 @@ useEffect(()=>{
 console.log(data)
 console.log(img)
 
+
+if(!Owner){
+  return(
+    <>
+      <div className="ErrorHandle">
+          Login required
+          { 
+            setTimeout(() => {
+               <>redirceting to Home page</>
+               setTimeout(() => {
+            
+                Navigate('/')
+             }, 5000)
+            }, 1000)  
+           
+          }
+      </div>
+    </>
+  )
+}
+
+
+
+
+
+
+
+
   return (
     <> 
      <Nav/>

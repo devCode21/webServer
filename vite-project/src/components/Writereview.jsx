@@ -57,20 +57,25 @@ function Writereview({id}) {
            const del=await axios.post('http://localhost:3000/revs/${id}/createRev')
       }
     })
+
+
+
+
+    
   return (
     <div className='review'>
-
-        <label htmlFor="rev">Write a review</label>
+      
+       {Owner ?<><label htmlFor="rev">Write a review</label>
         <input   name="" id="rev" value={review} onChange={(e)=>(setreview(e.target.value))} required={true} />
            
       
        <div>
        <button onClick={onclick}>Submit</button>
        <button onClick={(e)=>(e.preventDefault(),setreview(''))}>cancel</button>
-       </div>
+       </div></>:<div style={{fontFamily:'monospace',fontSize:'2rem', color:'rebeccapurple'}}>'Login Required to write Review'</div>}
         
-    </div>
-  )
+    </div>)
+  
 }
 
 export default Writereview
