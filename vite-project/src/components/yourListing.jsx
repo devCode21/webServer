@@ -13,7 +13,7 @@ function YourLis() {
    const [data , setData]=useState([])
   useEffect( ()=>{
     const dataCall=async()=>{
-      const res=await axios.get('http://localhost:3000/listings/yourLis',{headers:{
+      const res=await axios.get('https://webserver-ant9.onrender.com/listings/yourLis',{headers:{
         'Authorization':`Bearer ${Owner}`
      }})
       let setDatadata=await res.data.data

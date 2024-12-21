@@ -27,7 +27,7 @@ const[src,setSrc]=useState(false)
 useEffect(()=>{
     if(src===true){
       const serachdata=async()=>{
-         const data= await axios.post('http://localhost:3000/listings/search',{Location:search})
+         const data= await axios.post('https://webserver-ant9.onrender.com/listings/search',{Location:search})
         
          console.log(data)
   
@@ -62,7 +62,7 @@ const Owner=(localStorage.getItem("AccessToken"))
    setTimeout(async() => {
     setbtn((prev)=>(prev+1))
     localStorage.clear()
-    const LoggedOut=await axios.post('http://localhost:3000/user/logout',Owner,
+    const LoggedOut=await axios.post('https://webserver-ant9.onrender.com/user/logout',Owner,
      {headers:{
         'Authorization':`Bearer ${Owner}`
       }})

@@ -17,7 +17,7 @@ function Listing() {
    const [data , setData]=useState([])
     useEffect( ()=>{
       const dataCall=async()=>{
-      const res=await axios.get('http://localhost:3000/listings/',Owner)
+      const res=await axios.get('https://webserver-ant9.onrender.com/listings/',Owner)
       let setDatadata=await res.data.data
       setData(setDatadata)
      }

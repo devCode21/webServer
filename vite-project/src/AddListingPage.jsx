@@ -70,7 +70,7 @@ useEffect(()=>{
           return console.log('no data')
         }
      
-    const res=await axios.post('http://localhost:3000/listings/CreateLis',formData,{headers:{
+    const res=await axios.post('https://webserver-ant9.onrender.com/listings/CreateLis',formData,{headers:{
         'Authorization':`Bearer ${Owner}`,
         "Content-Type": "multipart/form-data"
       }})

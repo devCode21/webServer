@@ -33,7 +33,7 @@ function LisDetail() {
       const data=async()=>{
           try {
   //populatre backend me karna hai fir data bhejna haia 
-            const res1=await axios.get(`http://localhost:3000/listings/${id}/lis`,{headers:{
+            const res1=await axios.get(`https://webserver-ant9.onrender.com/listings/${id}/lis`,{headers:{
                'Authorization':`Bearer ${Owner1}`
             }})
           
@@ -56,7 +56,7 @@ function LisDetail() {
    const del=(e)=>{
       e.preventDefault()
       const deleCall=async()=>{
-         const res=await axios.post(`http://localhost:3000/listings/${id}/deleteLis`)
+         const res=await axios.post(`https://webserver-ant9.onrender.com/listings/${id}/deleteLis`)
          const res1=await res.data
          console.log(res1)
       }

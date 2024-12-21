@@ -39,7 +39,7 @@ function Signup() {
     }
     
     const Login2=async()=> {
-      const res=await axios.post('http://localhost:3000/user/Login',Signupdata )
+      const res=await axios.post('https://webserver-ant9.onrender.com/user/Login',Signupdata )
       const res1=await res.data.data
     
       localStorage.clear()
@@ -62,7 +62,7 @@ function Signup() {
     }
 
     const Login=async()=> {
-      const res=await axios.post('http://localhost:3000/user/reg',Signupdata )
+      const res=await axios.post('https://webserver-ant9.onrender.com/user/reg',Signupdata )
 
       const res1=await res.data
       if(res.data.statuscode==200){

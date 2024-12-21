@@ -14,7 +14,7 @@ function Showreview({id}) {
     useEffect(()=>{
              console.log(id)
              const data=async()=>{
-             const res=await axios.post(`http://localhost:3000/revs/${id}/Showrev`,{
+             const res=await axios.post(`https://webserver-ant9.onrender.com/revs/${id}/Showrev`,{
               headers:{
                  'Authorization':`Bearer ${Owner}`
               }})
@@ -33,7 +33,7 @@ function Showreview({id}) {
       console.log('rev',rev_id)
       if(del===true){
         const data=async()=>{
-          const res=await axios.post(`http://localhost:3000/revs/${id}/${rev_id}/delRev`,data,{headers:{
+          const res=await axios.post(`https://webserver-ant9.onrender.com/revs/${id}/${rev_id}/delRev`,data,{headers:{
               'Authorization':`Bearer ${Owner}`
           }})
           const  del_data=await res.data.data
@@ -63,7 +63,7 @@ function Showreview({id}) {
               OwnerName==e.owner.name ? <div>
               <button onClick={()=>(setId(e._id),setdel(true),navigate('/') ,setTimeout(() => {
                   navigate(`/${id}/LisDetail`)
-              }, 10))}>delete</button>
+              }, 1000))}>delete</button>
               <button>update</button>
               </div>:''
             }

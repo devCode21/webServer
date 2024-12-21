@@ -19,7 +19,7 @@ function Writereview({id}) {
 
          setTimeout(() => {
           navigate(`/${id}/LisDetail`)
-         }, 10);
+         }, 1000);
         
         
          
@@ -33,7 +33,7 @@ function Writereview({id}) {
 
       if(btn==true){
       const data=async()=>{
-      const res= await axios.post(`http://localhost:3000/revs/${id}/createRev`,{
+      const res= await axios.post(`https://webserver-ant9.onrender.com/revs/${id}/createRev`,{
         review:review
       },{
         headers:{
@@ -54,7 +54,7 @@ function Writereview({id}) {
 
     useEffect(()=>{
       const dele=async()=>{
-           const del=await axios.post('http://localhost:3000/revs/${id}/createRev')
+           const del=await axios.post('https://webserver-ant9.onrender.com/revs/${id}/createRev')
       }
     })
 

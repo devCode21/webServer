@@ -15,7 +15,7 @@ function UpdateLis(){
     const newdata=async()=>{
         try {
 
-          const res1=await axios.get(`http://localhost:3000/listings/${id}/lis`)
+          const res1=await axios.get(`https://webserver-ant9.onrender.com/listings/${id}/lis`)
         
            const lisdata=await res1.data.data
             setoldData(lisdata)
@@ -41,7 +41,7 @@ function UpdateLis(){
      return console.log('no data')
    }
   
-   const res=await axios.post(`http://localhost:3000/listings/${id}/updateLis`, data ,
+   const res=await axios.post(`https://webserver-ant9.onrender.com/listings/${id}/updateLis`, data ,
     {headers:{
        'Authorization':`Bearer ${Owner}`
     }}

@@ -22,12 +22,13 @@
 nav{
 
   height: 8rem;
-
+ 
+  padding-left: .2rem;
   width: 100vw;
   margin-top: 0;
   margin: 0;
   display: flex;
-  background-color:rgb(239, 241, 244);
+  background-color:#eff1f4;
   justify-content: space-between;
   margin-bottom: 1rem;
   border-bottom: 2px solid rgba(0, 0, 0, 0.009);
@@ -55,9 +56,12 @@ nav div{
    display: flex;
    flex-direction: row;
    justify-content: space-around;
+   font-size: 2rem;
 }
 #search input{
   border: none;
+  font-size: 1rem;
+  border-radius: 20px;
 }
 
 nav div input{
@@ -120,6 +124,7 @@ nav div input{
 
 
 .review{
+  padding: 2rem;
   margin-top: 2rem;
   margin-bottom: 4rem;
   height: 15rem;
@@ -128,7 +133,7 @@ nav div input{
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+ 
   font-size: 1.2rem;
 
 }
@@ -343,7 +348,7 @@ input:focus{
 
 /* listing page */
 .lists{
- 
+  padding: 2rem;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -571,6 +576,7 @@ width: 60%;
  }
  
  .revBox{
+    padding: 1rem;
       height: max-content;
       width: 97vw;
       display: flex;
