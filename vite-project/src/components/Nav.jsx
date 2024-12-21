@@ -92,10 +92,10 @@ const Owner=(localStorage.getItem("AccessToken"))
         {
           data? <div className="navLinks " onClick={handleLogout}> <FontAwesomeIcon icon={faUser}  size='2' />LogOut </div>: <div className="navLinks" style={{width:"20rem",height:"4rem", justifyContent:'space-around', color:'black', display:'flex', flexDirection:'row'
          }}  >
-            <span  style={{height:'4rem',width:'9rem', textAlign:'center', alignContent:'center', backgroundColor:'darkorange',borderRadius:'12px'}}>
+            <span  style={{height:'3rem',width:'7rem', textAlign:'center', alignContent:'center', backgroundColor:'darkorange',borderRadius:'12px'}}>
            <Link to={'/Login'} style={{  color:'black'}}>Login {data}</Link>
             </span>
-            <span  style={{height:'4rem',width:'9rem', textAlign:'center', alignContent:'center',backgroundColor:'darkorange', borderRadius:'12px'}}>
+            <span  style={{height:'3rem',width:'7rem', textAlign:'center', alignContent:'center',backgroundColor:'darkorange', borderRadius:'12px'}}>
             <Link to={'/signup'} style={{color:'black'}}>Signup</Link>
             </span>
             

@@ -79,7 +79,7 @@ function LisDetail() {
          <h1>{res.title}</h1>
          <p style={{fontFamily:'monospace'}}> {<b style={{color:'black',marginBottom:'2rem'}}> Description</b>} {<br/>} {<br/>} {res.description ||'good place to visit'} </p>
          <h2><b><span>Price </span>{}= {} {}{res.price }</b></h2>
-         <div style={{display:'flex', fontSize:'1rem',justifyContent:'space-between'}}>
+         <div style={{display:'flex',flexWrap:'wrap', fontSize:'1rem',justifyContent:'space-between'}}>
          <h2 > <span>Location/State </span>: {res.location}</h2>
          <h2 style={{marginRight:'5rem'}}> <span> Country </span>: {} {res.country}</h2>
          </div>
