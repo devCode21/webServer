@@ -12,6 +12,7 @@ import Login from "./Login.";
 import Signup from "./Signup";
 import YourLis from './components/yourListing'
 
+import Searchdata from "./components/Searchdata";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
       <Route path='Login'  element={<Login/>}/>
       <Route path="signup" element={<Signup/>}/>
       <Route path="yourLis" element={<YourLis/>}/>
+      <Route path="searchLis" element={<Searchdata/>}/>
 
     </>
   )
