@@ -14,28 +14,37 @@ function Login() {
     const[clickbtn,setClickbtn]=useState(1)
     const [showmsg,setmsg]=useState(false)
     const navigate=useNavigate()
-
+   const [user,setUser]=useState('')
     const Logindata={
         email,
         password
     }
     
     const Login=async()=> {
-      const res=await axios.post('https://webserver-ant9.onrender.com/user/Login',Logindata )
-      const res1=await res.data.data
 
-      localStorage.clear()
-      const data = localStorage.setItem('AccessToken',res1.AccessToken )
-      const name=localStorage.setItem('Name',res1.LogUser.name)
-    
-     
-      setmsg(true)
-      console.log("res",res1.AccessToken)
 
-      if(res1){
-        setTimeout(() => {
-          navigate('/')
-      }, 3000)
+      try {
+        const res=await axios.post('https://webserver-ant9.onrender.com/user/Login',Logindata )
+         
+        const res1=await res.data.data
+       
+  
+        localStorage.clear()
+        const data = localStorage.setItem('AccessToken',res1.AccessToken )
+        const name=localStorage.setItem('Name',res1.LogUser.name)
+      
+       
+        setmsg(true)
+        console.log("res",res1.AccessToken)
+  
+        if(res1){
+          setTimeout(() => {
+            navigate('/')
+        }, 3000)
+        }
+      } catch (error) {
+          console.log("error",error)
+          setUser(error.response.data.message)
       }
 
 
@@ -59,8 +68,9 @@ function Login() {
   }, 7000);
   }
     
+  
 
-
+  console.log(user)
   return (
     <div className="LoginBox">
        <div className='Login' >
@@ -71,12 +81,12 @@ function Login() {
  
  <div className="email" >
       {/* <label htmlFor="email"></label> */}
-      <input type="text" id='email' required={true} onChange={(e)=>(setemail(e.target.value))}  placeholder='enter your email'/>
+      <input type="text" id='email' required={true} onChange={(e)=>(setemail(e.target.value),setUser(''))}  placeholder='enter your email'/>
  </div>
 
   <div className="password">
       {/* <label htmlFor="password"></label> */}
-       <input type='text' id='password' required={true} onChange={(e)=>(setpassword(e.target.value))}  placeholder='enter you password'/>
+       <input type='text' id='password' required={true} onChange={(e)=>(setpassword(e.target.value),setUser(''))}  placeholder='enter you password'/>
   </div>
 
   <button onClick={(e)=>(e.preventDefault,setClickbtn((prev)=>(prev+1)))}>Login</button>
@@ -91,6 +101,10 @@ function Login() {
        
    </div>:''
 
+  }
+
+  {
+    user && user.length>0 ?<div>{user} </div>:" "
   }
 
 
