@@ -79,23 +79,23 @@ const Owner=(localStorage.getItem("AccessToken"))
     <>
       <nav>
         <div className="navLinks">
-           <FontAwesomeIcon icon={faHouse} size='2x' /> 
+           <FontAwesomeIcon className='homeicon' color='black' icon={faHouse} size='2x' /> 
            Home
            </div>
         <div className="navLinks" id="search">
             <input type="text" placeholder='Enter the Location/Country/Name' value={search} onChange={(e)=>(setSearch(e.target.value))}/>
 
-            <button  style={{border:'none'}} onClick={(e)=>(e.preventDefault(),handleSearch(),setSrc(true))}><FontAwesomeIcon icon={faMagnifyingGlass} size='2x'  /></button>
+            <button  style={{border:'none'}} onClick={(e)=>(e.preventDefault(),handleSearch(),setSrc(true))}><FontAwesomeIcon className='searchIcon' icon={faMagnifyingGlass} size='2x'  /></button>
            
             
         </div>
         {
-          data? <div className="navLinks " onClick={handleLogout}> <FontAwesomeIcon icon={faUser}  size='2' />LogOut </div>: <div className="navLinks" style={{width:"20rem",height:"4rem", justifyContent:'space-around', color:'black', display:'flex', flexDirection:'row'
-         }}  >
-            <span  style={{height:'3rem',width:'7rem', textAlign:'center', alignContent:'center', backgroundColor:'darkorange',borderRadius:'12px'}}>
+          data? <div className="navLinks " onClick={handleLogout}> <FontAwesomeIcon className='profileIcon' icon={faUser}  size='2x ' />LogOut </div>: <div className="navLinks logSignbox" 
+           >
+            <span className='LogSignup'>
            <Link to={'/Login'} style={{  color:'black'}}>Login {data}</Link>
             </span>
-            <span  style={{height:'3rem',width:'7rem', textAlign:'center', alignContent:'center',backgroundColor:'darkorange', borderRadius:'12px'}}>
+            <span className='LogSignup' >
             <Link to={'/signup'} style={{color:'black'}}>Signup</Link>
             </span>
             

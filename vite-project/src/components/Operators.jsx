@@ -9,7 +9,7 @@ function Operators() {
   return (
     <>
         {Owner && <div className='operator'>
-            <button><Link to='/yourLis'>your Listings</Link></button>
+            <button><Link to='/yourLis' style={{color:'Black'}}>your Listings</Link></button>
             <button><Link to='/createLis' style={{color:'Black'}}><FontAwesomeIcon icon={faPlus} size='3x'/> <br /></Link></button>
             <button>your Profile</button>
       </div>}
