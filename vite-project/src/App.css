@@ -154,12 +154,11 @@ nav div input{
   margin-top: 2rem;
   margin-bottom: 4rem;
   height: 12rem;
-  width: 97%;
+ 
   border: 2px solid #cdcdecc7;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
- 
   font-size: 1.2rem;
 
 }
@@ -325,7 +324,7 @@ nav div input{
   margin-left: .75rem;
   height: 70rem;
   width: 99%;
-  border: 2px solid black;
+ 
  
 }
 
@@ -370,6 +369,14 @@ input:focus{
   font-size: 1.5rem;
 }
 
+.addlisImage{
+   height: 29rem;
+   width: 28rem;
+   margin-left: 8rem;
+   margin-top:2rem ;
+   border-radius: 10px;
+
+}
 
 
 /* listing page */
@@ -506,6 +513,7 @@ width: 60%;
   border-radius: 15px;
      
 }
+
 
 
 
@@ -700,8 +708,10 @@ width: 60%;
   .LogSignup:hover{
     
     height:2rem;
-    width:2.5rem;
+    width:2.8rem;
+    font-size: .5rem;
     text-align:center;
+    font-family: monospace;
     align-content:center;
     background-color:rgb(0, 255, 68);
     border-radius:12px;
@@ -847,9 +857,9 @@ width: 60%;
  margin-top: 0rem;
  margin-bottom: 4rem;
  height: 10rem;
- width: 97vw;
+
  border: 2px solid #cdcdecc7;
- border: 2px solid black;
+
  border-radius: 8px;
  display: flex;
  flex-direction: column;
@@ -863,35 +873,34 @@ width: 60%;
     margin-bottom: .75rem;
     font-size: 1rem;
     font-family: monospace;
-  
-    width: 70%;
+   
+    width: 90%;
     border: none;
     border-bottom: 2px solid #161616;
     
 }
 
 .review input:focus{
-  border: none;
+  outline: none;
 }
 
 .review button{
   margin-top: 1rem;
   height: 3rem;
-  width: 8rem;
+  width: 7rem;
   border-radius: 10px;
   margin-right: 2rem;
   border: none;
   font-family: monospace;
   font-size: larger;
 
-
 }
 /* footer */
 
 .review button:hover{
- height: 4rem;
+ height:  3rem;
  background-color: #203ccd5d;
- width: 10rem;
+ width: 7rem;
  border-radius: 10px;
  margin-right: 2rem;
  border: none;
@@ -1026,41 +1035,61 @@ border-radius: 10px;
 }
 
 .addLis{
+font-family: monospace;
  margin-top: 1rem;
- margin-left: .75rem;
+margin-left: 0rem;
  height: 70rem;
  width: 99%;
- border: 2px solid black;
+
+ display: flex;
+ flex-direction: column;
 
 }
 
 .add-detail{
-
-  height:7rem ;
-  width: 49rem;
-  font-size: 1.5rem;
+  margin-top: 1rem;
+ 
+  height:3rem ;
+  width: 25rem;
+  font-size: .6rem;
   text-transform: capitalize;
-  margin-left: 2rem;
+  margin-left: .5rem;
   display: flex;
- justify-content: space-around;
- align-items: center;
+  justify-content: space-around;
+  align-items: center;
 
 }
 .add-detail input{
- height: 3rem;
- width: 40rem;
+
+  
+  align-content: center;
+ height: 2rem;
+ width: 100%;
  margin-left: 1rem;
  border-radius: 8px;
- border-color: greenyellow;
+ border-color: rgba(172, 255, 47, 0.447);
 }
 .addLis button{
-
+margin-top: 1rem;
  height: 3rem;
  width: 8rem;
+ font-family: monospace;
+ border: 2px solid rgba(0, 0, 0, 0.24);
  border-radius: 10px;
- margin-left: 2rem;
+ margin-left: 0.5rem;
  font-size: 1.5rem;
 }
+
+
+.addlisImage{
+  height: 24rem;
+  width: 24rem;
+  margin-left: 1rem;
+  margin-top:2rem ;
+  border-radius: 10px;
+
+}
+
 
 /* listing page */
 .lists{
@@ -1105,7 +1134,7 @@ border-radius: 10px;
 }
 
 .lis_img{
-width: 60%;
+ width: 100%;
  
  border-radius: 10px;
  display: flex;
@@ -1113,7 +1142,7 @@ width: 60%;
   
 }
 .lis_img img{
-  width: 22rem;
+  width: 25rem;
   height: 27rem;
   border-radius: 15px;
  
@@ -1133,7 +1162,7 @@ width: 60%;
 .btn{
  margin-top: 5rem;
   height: 10rem;
-
+ 
   width:90% ;
   display: flex;
   justify-content: flex-start;
@@ -1142,12 +1171,13 @@ width: 60%;
 .btn button{
   margin: 0px;
    height: 4rem;
-   width: 10rem;
+   width: 8rem;
+  
    border: none;
    background-color: rgb(109, 237, 4);
-   margin-right: 7rem;
+   margin-right: 2rem;
    border-radius: 25px;
- 
+  
    color: #181717;
    font-size: 20px;
 
@@ -1167,6 +1197,84 @@ width: 60%;
  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
+
+.LoginBox{
+  height: 100vh;
+
+  width: 97vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+ 
+/* background-image: url('https://th.bing.com/th/id/R.948376f6d8514aeaa5580deb39013e13?rik=5LVJUIUlfTmf5w&riu=http%3a%2f%2fwallpapercave.com%2fwp%2f4lImLyA.jpg&ehk=2AQZ2jVoiesMErnFGBSxD2RbgdF%2fXjSF88oMXVEHU8o%3d&risl=&pid=ImgRaw&r=0') */
+}
+
+.login_img{
+   visibility: hidden;
+}
+
+.login_img img{
+  height: 100%;
+  visibility: hidden;
+  display: none;
+ 
+}
+.Login{
+  border: 2px solid rgba(124, 115, 115, 0.589);
+  background-color: whitesmoke;
+  display: flex;
+  width: 90%;
+  font-family: monospace;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 32.5rem;
+  margin-left: 0rem;
+  padding: 1.25rem;
+  border-radius: 15px;
+     
+}
+
+
+
+
+.Login div{
+ 
+  height: 3rem;
+  border-radius: 25px;
+  
+  
+ 
+ 
+}
+.Profile{
+  height: 10rem;
+  margin-bottom: 4rem;
+ 
+ 
+}
+.Login input{
+  font-size: 1.5rem;
+  font-family: monospace;
+   height: 4rem;
+   width: 25rem;
+   border-radius: 25px;
+   text-align: center;
+   border: none;
+   background-color: rgba(184, 126, 136, 0.184);
+}
+
+.Login button{
+  border-radius: 25px;
+  height: 5rem;
+  width: 25rem;
+  font-size: 1.5rem;
+  background-color: #3498db43;
+  border: none;
+  font-family: monospace;
+}
+
 
   
 }

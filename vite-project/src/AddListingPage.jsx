@@ -169,7 +169,7 @@ if(!Owner){
 
         </form >
       <div className='img'>
-             <img style={{height:'29rem', width:'28rem' ,marginLeft:'8rem', marginTop:'2rem',borderRadius:"10px"}}   src={prev?prev:img1} alt="" />
+             <img className='addlisImage'   src={prev?prev:img1} alt="" />
         </div>
       
       </div>

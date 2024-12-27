@@ -85,7 +85,7 @@ function LisDetail() {
          </div>
          <div className='btn'>
        {
-         Owner==user? <><button ><Link to={`/${id}/updateLis`}>Update</Link></button>
+         Owner==user? <><button ><Link  style={{color:'black'}} to={`/${id}/updateLis`}>Update</Link></button>
          <button onClick={del }>Delete</button>
  </>: ' '
        }
