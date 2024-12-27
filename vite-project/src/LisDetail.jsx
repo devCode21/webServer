@@ -89,7 +89,6 @@ function LisDetail() {
          <button onClick={del }>Delete</button>
  </>: ' '
        }
-
      </div>
       </div>
      </div>
